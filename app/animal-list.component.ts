@@ -4,11 +4,16 @@ import { Animal } from './animal.model';
 @Component({
   selector:'animal-list',
   template:`
+  <select (change)="onChange($event.target.value)">
+    <option value="allAnimals" selected="selected">All Animals</option>
+    <option value="young">Young Animals</option>
+    <option value="mature" >Old Animals</option>
+  </select>
+
   <div class="animalList">
     <ol>
-
         -----------
-      <li *ngFor="let currentAnimal of animalList">
+      <li *ngFor="let currentAnimal of animalList | age:filteredByAge">
         Species: '{{currentAnimal.species}}'<br>
         Name : '{{currentAnimal.name}}'<br>
         Age: '{{currentAnimal.age}}'<br>
@@ -21,7 +26,7 @@ import { Animal } from './animal.model';
         ------------
         <br>
         <br>
-        
+
       </li>
     </ol>
   </div>
@@ -30,6 +35,10 @@ import { Animal } from './animal.model';
 
 export class AnimalListComponent{
   @Input() animalList: Animal[];
+  filteredByAge: string ="allAnimals";
 
+  onChange(optionFromMenu) {
+      this.filteredByAge = optionFromMenu;
+  }
 
 }

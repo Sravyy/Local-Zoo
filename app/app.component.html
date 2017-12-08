@@ -4,7 +4,7 @@
     <form>
       <input [value]="name" (input)="name = $event.target.value" type="text">
     </form>
-    <animal-list [animalList]="masterAnimalList"></animal-list>
+    <animal-list [animalList]="masterAnimalList" ></animal-list>
     <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
 
 </div>
