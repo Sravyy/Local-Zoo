@@ -8,10 +8,11 @@ import { Animal } from './animal.model';
 })
 
 export class AppComponent {
-  animalList: Animal[] = [];
+  masterAnimalList: Animal[] = [];
 
   addAnimal(newAnimalFromChild: Animal){
-    this.animalList.push(newAnimalFromChild);
+    this.masterAnimalList.push(newAnimalFromChild);
   }
+
 
 }
