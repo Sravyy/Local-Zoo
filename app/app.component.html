@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Local Zoo</h1>
+  <h1>Welcome, {{name}}!</h1>
+    <form>
+      <input [value]="name" (input)="name = $event.target.value" type="text">
+    </form>
+    <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
+
+</div>
