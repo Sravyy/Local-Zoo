@@ -12,8 +12,10 @@ import { Animal } from './animal.model';
 
   <div class="animalList">
     <ol>
-        -----------
+
       <li *ngFor="let currentAnimal of animalList | age:filteredByAge">
+        <br>
+        ----------- <br>
         Species: '{{currentAnimal.species}}'<br>
         Name : '{{currentAnimal.name}}'<br>
         Age: '{{currentAnimal.age}}'<br>
@@ -23,7 +25,8 @@ import { Animal } from './animal.model';
         Sex: '{{currentAnimal.sex}}'<br>
         Likes: '{{currentAnimal.likes}}'<br>
         DisLikes: '{{currentAnimal.disLikes}}'<br>
-        ------------
+        ----------- <br>
+        <button (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button>
         <br>
         <br>
 
@@ -35,10 +38,14 @@ import { Animal } from './animal.model';
 
 export class AnimalListComponent{
   @Input() animalList: Animal[];
+  @Output() clickSender = new EventEmitter();
   filteredByAge: string ="allAnimals";
 
   onChange(optionFromMenu) {
       this.filteredByAge = optionFromMenu;
   }
 
+  editButtonHasBeenClicked(animalToEdit: Animal){
+    this.clickSender.emit(animalToEdit);
+  }
 }
