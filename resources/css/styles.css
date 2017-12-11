@@ -1,12 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Signika');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script');
 
 body{
   font-size: 20px;
   font-family: 'Signika', sans-serif;
+  background-image:
+   linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+   url("http://www.cartoonswallpapers.net/wallpapers/madagascar-killing-zoo-cartoon-wallpaper-ipad.jpg");
+  background-size: cover;
+  color: white;
 }
 
 .jumbotron{
   text-align: center;
+  font-family: 'Oleo Script', cursive;
+  font-size: 35px;
 }
 
 .userName{
@@ -21,4 +30,8 @@ input, textarea, select, label, button, li{
 input{
   margin: 10px 10px 0px 0px;
   border-radius: 3px;
+}
+
+select, input, .jumbotron, button{
+  color: black;
 }

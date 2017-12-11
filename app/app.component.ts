@@ -5,14 +5,17 @@ import { Animal } from './animal.model';
   selector:'app-root',
   template:`
   <div class="container">
-    <h1 class="jumbotron">Local Zoo</h1>
-    <h1 class="userName">Welcome, {{name}}!</h1>
+  <br>
+    <div class="jumbotron">Local Zoo</div>
+    <h2 class="userName">Welcome, {{name}}!</h2>
       <form>
         User Name: <input [value]="name" (input)="name = $event.target.value" type="text">
       </form>
       <animal-list [animalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
-      <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
       <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender) ="finishedEditing()"></edit-animal>
+      <br>
+      <hr>
+      <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
   </div>
   `
 
